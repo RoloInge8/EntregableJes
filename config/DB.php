@@ -1,9 +1,9 @@
 <?php
     class DB{
         public static function conectar(){
-            $url="mysql: host=localhost; dbname=ventasdbsenati";
-            $user="root";
-            $password="";
+            $url="pgsql: host=localhost; dbname=ventasweb";
+            $user="postgres";
+            $password="123";
             $cn=new PDO($url, $user, $password);
             return $cn;
         }

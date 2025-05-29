@@ -1,5 +1,5 @@
 <?php
-    class Familia{
+class Familia{
         private $idfamilia;
         private $nombre;
         private $descripcion;
@@ -26,5 +26,5 @@
         public function setDescripcion($descripcion){
                 $this->descripcion = $descripcion;
         }
-    }
+}
 ?>

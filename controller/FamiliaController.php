@@ -1,10 +1,10 @@
 <?php
-    require './model/FamiliaModel.php';
+    require_once './model/FamiliaModel.php';
     class FamiliaController{
         public function cargar(){
             $model=new FamiliaModel();
             $familias=$model->cargar();
-            require './view/viewCargarFamilias.php';
+            require_once './view/viewCargarFamilias.php';
         }
 
         public function guardar(){
@@ -17,9 +17,17 @@
                 header('Location: index.php');
             }
             else{
-                require './view/viewGuardarFamilia.php';
+                require_once './view/viewGuardarFamilia.php';
             }
 
+        }
+
+        public function borrar(){
+            if(isset($_GET['idfam'])){
+                $model=new FamiliaModel();
+                $model->borrar($_GET['idfam']);
+                header('Location: index.php');
+            }
         }
     }
 ?>

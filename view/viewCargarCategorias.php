@@ -10,27 +10,26 @@
         <?php 
             include 'menu.php';
         ?>
-        <h1>LISTA FAMILIAS</h1>
+        <h1>Lista de Categorias</h1>
         <hr>
-        <a href="index.php?accion=guardarfamilia">Crear Nuevo</a>
         <table>
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Descripcion</th>
-                    <th>Borrar</th>
+                    <td>Id</td>
+                    <td>Nombre</td>
+                    <td>IdFam</td>
+                    <td>Borrar</td>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                    foreach($familias as $fam){
+                    foreach($categorias as $cat){
                 ?>
                 <tr>
-                    <td><?=$fam->getIdfamilia()?></td>
-                    <td><?=$fam->getNombre()?></td>
-                    <td><?=$fam->getDescripcion()?></td>
-                    <td><a href="index.php?accion=borrarfamilia&idfam=<?=$fam->getIdfamilia()?>">Borrar</a></td>
+                    <td><?=$cat->getIdcategoria()?></td>
+                    <td><?=$cat->getNombre()?></td>
+                    <td><?=$cat->getIdfamilia()?></td>
+                    <td><a href="">Borrar</a></td>
                 </tr>
                 <?php
                     }

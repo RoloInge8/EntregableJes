@@ -1,6 +1,6 @@
 <?php  
-    require './config/DB.php';
-    require 'Familia.php';
+    require_once './config/DB.php';
+    require_once 'Familia.php';
 
     class FamiliaModel{
         private $db;
@@ -31,7 +31,18 @@
             }
             return $familias;
         }
+        public function borrar($idfam){
+            $sql="delete from familia where idfamilia=:idfam";
+            $ps=$this->db->prepare($sql);
+            $ps->bindParam(':idfam', $idfam);
+            $ps->execute();
+        }
+
     }
 ?>
+
+
+
+
 
 
